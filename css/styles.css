@@ -169,7 +169,7 @@ img {
   letter-spacing: 0.02em;
 
   color: #212121;
-  transition-property: color fill;
+  transition-property: color, fill;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
@@ -201,7 +201,7 @@ img {
   letter-spacing: 0.02em;
 
   color: #757575;
-  transition-property: color fill;
+  transition-property: color, fill;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
@@ -377,20 +377,27 @@ img {
   background: #ffffff;
   margin-top: 16px;
 }
-
-.social-block {
+.social-list-link {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.social-list-link:hover .social-block {
-  background-color: var(--accent-color);
+.social-list-icon {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.social-list-link:focus .social-block {
+.social-list-link:focus,
+.social-list-link:hover {
   background-color: var(--accent-color);
 }
 .social-list-link:hover .social-list-icon {
@@ -398,11 +405,6 @@ img {
 }
 .social-list-link:focus .social-list-icon {
   fill: #ffffff;
-}
-.social-list-icon {
-  width: 20px;
-  height: 20px;
-  fill: #afb1b8;
 }
 
 .members {
@@ -494,7 +496,8 @@ img {
   margin-left: -30px;
   margin-top: -30px;
 }
-.clients-block {
+
+.clients-list-link {
   flex-basis: calc(100% / 6 - 30px);
   margin-left: 30px;
   margin-top: 30px;
@@ -506,12 +509,12 @@ img {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.clients-list-link {
-  height: 100%;
-  width: 100%;
+.clients-list-link:focus,
+.clients-list-link:hover {
+  border-color: var(--accent-color);
 }
-
 .clients-list-link:focus .clients-list-icon {
   fill: var(--accent-color);
 }
@@ -519,10 +522,10 @@ img {
   fill: var(--accent-color);
 }
 
-.clients-list-link:hover .clients-block {
+.clients-list-link:hover .clients-list-icon {
   border-color: var(--accent-color);
 }
-.clients-list-link:focus .clients-block {
+.clients-list-link:focus .clients-list-icon {
   border-color: var(--accent-color);
 
   cursor: pointer;
@@ -530,6 +533,7 @@ img {
 
 .clients-list-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* =======================КОНЕЦ ГЛАВНОЙ СТУДИИ================== */
 
@@ -567,6 +571,9 @@ img {
   letter-spacing: 0.03em;
 
   color: #ffffff99;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-list-link:hover,
 .footer-list-link:focus {
@@ -593,7 +600,13 @@ img {
 
   color: #ffffff;
 }
-.footer-social-block {
+.footer-social-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.footer-social-list-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -601,19 +614,16 @@ img {
   height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-}
-.footer-social-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-list-icon {
   width: 20px;
   height: 20px;
   fill: #ffffff;
 }
-.footer-social-list-link:hover .footer-social-block {
+.footer-social-list-link:hover {
   background-color: var(--accent-color);
 }
 
@@ -690,6 +700,9 @@ img {
   letter-spacing: 0.03em;
 
   color: #212121;
+  transition-property: background, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-btn-list-but:hover,
 .nav-btn-list-but:focus {
@@ -711,6 +724,7 @@ img {
   margin-left: 30px;
   margin-top: 30px;
   border: 1px solid #eee;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .elements-list-img {
   display: block;
@@ -739,9 +753,9 @@ img {
   padding-bottom: 62px;
   padding-right: 24px;
   height: 101%;
-  width: 100%;
+  width: 101%;
   background: rgba(33, 150, 243, 0.9);
-  /* overflow: scroll; */
+  overflow: auto;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
